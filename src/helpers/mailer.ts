@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import User from "@/model/userModal";
+import User from "@/models/userModal";
 import bcryptjs from "bcryptjs";
 
 export const sendEmail = async ({ email, emailType, userId }: any) => {
@@ -21,8 +21,8 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
       host: "sandbox.smtp.mailtrap.io",
       port: 2525,
       auth: {
-        user: process.env.MAIL_USER!,
-        pass: process.env.MAIL_PASS!,
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
         //   TODO:add these credentials to .env files
       },
     });
